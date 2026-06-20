@@ -1,72 +1,62 @@
-# 🎬 Movies Intergalactic
+Nikolas Fletton — Portfolio
 
-A movie search app that pulls live data from the OMDB API — search any title and get back its poster, plot, genre, cast, writer/director, runtime and release info, rendered as clean card-based UI.
+My personal developer portfolio, built to showcase my projects, work experience, and tech stack as I move into a software development career.
 
-**Status:** 🚧 In active development — built as a personal project to practice component architecture, state management, and third-party API integration. See the [Roadmap](#roadmap) below for what's planned next.
-
-## Features
-
-- 🔍 Search for any movie by title
-- 🖼️ Displays poster, plot summary, and rating/runtime/release badges
-- 🎭 Genre, cast, writer, and director shown as tagged badges
-- ⚡ Built with React 19 + Vite for fast dev/build
-
-## Tech Stack
-
-- **React 19** — UI and component state
-- **Vite** — dev server and build tooling
-- **Tailwind CSS 4** + **DaisyUI** — styling and UI components
-- **OMDB API** — movie data source
+Sections
 
 
-## Getting Started
+Home — intro, photo, and links to resume/socials
+Career — work experience timeline
+Projects — featured projects, including ones currently in progress
+Tech — technologies and tools I work with
+Contact — ways to get in touch
 
-### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or later recommended)
-- An OMDB API key — get a free one at [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
+Tech Stack
 
-### Installation
 
-```bash
-# Clone the repo
-git clone https://github.com/Nik-Fle/movies-intergalactic.git
-cd movies-intergalactic
+Astro — static site framework
+TypeScript
+Tailwind CSS 4
 
-# Install dependencies
+
+Content is data-driven
+
+All page content lives in JSON files under src/data/ rather than hardcoded in components, so updating the site doesn't require touching any markup:
+
+FileControlshome.jsonName, intro text, photo, resume link, social linkscareer.jsonWork experience entriesprojects.jsonProject cards (title, description, tech, links, category)tech.jsonTech stack icons/list
+
+To add or edit a project, for example, just add an entry to projects.json — no component code needed.
+
+Getting Started
+
+Prerequisites
+
+
+Node.js v18 or later
+
+
+Installation
+
+bashgit clone https://github.com/Nik-Fle/nik-fle.github.io.git
+cd nik-fle.github.io
 npm install
-```
 
-### Environment Variables
+Run locally
 
-This app needs an OMDB API key to fetch movie data. Create a `.env` file in the project root:
+bashnpm run dev
 
-```
-VITE_OMDB_API_KEY=your_api_key_here
-```
+Open the local URL Astro prints in your terminal (usually http://localhost:4321).
 
-> Vite only exposes env variables prefixed with `VITE_` to the front end, and reads them via `import.meta.env.VITE_OMDB_API_KEY`. Add `.env` to your `.gitignore` so your real key never gets committed.
+Build for production
 
-### Run locally
+bashnpm run build
+npm run preview   # preview the production build locally
 
-```bash
-npm run dev
-```
+Deployment
 
-Then open the local URL Vite prints in your terminal (usually `http://localhost:5173`).
+This site deploys automatically to GitHub Pages via GitHub Actions on every push to the default branch — see .github/workflows/deploy.yml.
 
-## Roadmap
+Acknowledgments
 
-Planned additions:
-
-- [ ] Languages and country metadata
-- [ ] Awards info
-- [ ] Side-by-side ratings comparison (IMDB, Rotten Tomatoes, Metacritic)
-- [ ] Personal Accounts 
-- [ ] To Watch List 
-- [ ] Media type filter (movie / series / episode)
-- [ ] Box office figures
-
-## Acknowledgments
-
-Movie data provided by the [OMDB API](https://www.omdbapi.com/).
+Built on top of the career-portfolio template by Nabil Akhunjee (MIT licensed), customized with my own content, projects, and styling.
